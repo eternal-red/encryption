@@ -31,7 +31,8 @@ def acos(x):
         fact=k_exclam+2*k*k_exclam
         s += num*Decimal(half_poc)/Decimal(fact)
     getcontext().prec -= 2
-    return +s
+    s=Decimal(math.pi/2)-s
+    return s
 
 def enc(x,y):
     for i in range(100):
@@ -40,19 +41,12 @@ def enc(x,y):
 
 def dec(x,z):
     for i in range(100): 
-        z=Decimal(math.pi/2)-acos(Decimal(z)-Decimal(x))
-         
+        z=acos(Decimal(z)-Decimal(x))
     return z/4
 
-def test(x,y):
-    getcontext().prec=50
-    z=Decimal(x)/Decimal(y) #be sure to do this not (Decimal(x/y)
-    return z
+
 
 
 #print(enc(1.13598729, 1.29384))  #1.1... is ideal
 #print(dec(1.43598729, 1.3827853845447892783768614148704878803618413235839504283525029945052193226467966208523589882421354895049061520427437847541016493692372719634530040484699471316565600730160698601549434455002560720781340))
-#print(math.acos(-0.5))
 
-print(math.acos(-0.05))
-print(acos(Decimal(-0.05)))
