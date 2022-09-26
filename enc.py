@@ -1,5 +1,4 @@
 import math
-import decimal
 from decimal import *
 getcontext().prec=200
 
@@ -34,19 +33,12 @@ def acos(x):
     s=Decimal(math.pi/2)-s
     return s
 
-def enc(x,y):
+def enc(x,y): #produces z
     for i in range(100):
         y=Decimal(x)+Decimal(cos(y))
-    return y
+    return y 
 
 def dec(x,z):
     for i in range(100): 
         z=acos(Decimal(z)-Decimal(x))
     return z/4
-
-
-
-
-#print(enc(1.13598729, 1.29384))  #1.1... is ideal
-#print(dec(1.43598729, 1.3827853845447892783768614148704878803618413235839504283525029945052193226467966208523589882421354895049061520427437847541016493692372719634530040484699471316565600730160698601549434455002560720781340))
-
