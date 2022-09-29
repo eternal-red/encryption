@@ -1,14 +1,16 @@
 import time
 import enc
+from decimal import *
+
 #start time
 start_time=time.time_ns()
 gm_time=time.localtime(start_time/1000000000)
 output=time.asctime(gm_time)
 print(output)
 
-#program
 #use for loop for average time estimate
-print(enc.enc(1,1))
+encrypted=(enc.enc(1,1))
+cleartext=(enc.dec(1,encrypted))
 
 #calculate elapsed time
 end_time=time.time_ns()

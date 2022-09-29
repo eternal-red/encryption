@@ -1,7 +1,18 @@
 import math
 from decimal import *
 getcontext().prec=200
-pi=Decimal(3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951)
+def pi():
+    getcontext().prec += 2  # extra digits for intermediate steps
+    three = Decimal(3)      # substitute "three=3.0" for regular floats
+    lasts, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
+    while s != lasts:
+        lasts = s
+        n, na = n+na, na+8
+        d, da = d+da, da+32
+        t = (t * n) / d
+        s += t
+    getcontext().prec -= 2
+    return +s       
 
 def cos(x):
     getcontext().prec += 2
@@ -32,7 +43,7 @@ def acos(x):
         constant*= 4 
         s+=(double_fact*expo)/(constant*(fact**2)*double_n) #stored as decimal type
     getcontext().prec -= 2
-    s=pi/2-x-s
+    s=pi()/2-x-s
     return +s  #performs an operation to change s to new precision
 
 def enc(x,y): #produces z
