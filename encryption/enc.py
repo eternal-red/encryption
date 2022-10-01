@@ -1,6 +1,5 @@
-import math
 from decimal import *
-getcontext().prec=200
+getcontext().prec=70
 def pi():
     getcontext().prec += 2  # extra digits for intermediate steps
     three = Decimal(3)      # substitute "three=3.0" for regular floats
@@ -47,11 +46,11 @@ def acos(x):
     return +s  #performs an operation to change s to new precision
 
 def enc(x,y): #produces z
-    for i in range(100):
+    for i in range(200):
         y=Decimal(x)+Decimal(cos(y))
     return y 
 
 def dec(x,z):
-    for i in range(100): 
+    for i in range(200): 
         z=acos(Decimal(z)-Decimal(x))
     return z

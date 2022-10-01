@@ -10,7 +10,7 @@ print(output)
 
 #use for loop for average time estimate
 encrypted=(enc.enc(1,1))
-cleartext=(enc.dec(1,encrypted))
+#cleartext=(enc.dec(1,encrypted))
 
 #calculate elapsed time
 end_time=time.time_ns()

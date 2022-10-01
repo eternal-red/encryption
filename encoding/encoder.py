@@ -33,6 +33,5 @@ def encoder():
 
 #print(encoder())
 
-var='0.7179616600596273'
-print(float(var))
+
 
