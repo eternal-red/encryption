@@ -18,3 +18,4 @@ print(test(1.111111111111111,1.111111111111111))
 
 #accurate for 150 decimal places
 #print(enc.cos(Decimal(2)))
+

@@ -1,4 +1,5 @@
 from decimal import *
+import random
 getcontext().prec=70
 def pi():
     getcontext().prec += 2  # extra digits for intermediate steps
@@ -54,3 +55,6 @@ def dec(x,z):
     for i in range(200): 
         z=acos(Decimal(z)-Decimal(x))
     return z
+getcontext().prec=16 
+
+
