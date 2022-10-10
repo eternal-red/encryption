@@ -1,4 +1,4 @@
-import enc
+import fixedKey
 from decimal import *
 getcontext().prec=50
 def arccos_cordic (t,n):
@@ -96,7 +96,7 @@ def arccos_cordic (t,n):
   return Decimal(theta)
 
 def test(y):
-    z=enc.cos(Decimal(y))
+    z=fixedKey.cos(Decimal(y))
     return Decimal(arccos_cordic(z,70))
 
 #stuck on 17 digits of precision
