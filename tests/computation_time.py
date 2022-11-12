@@ -1,5 +1,5 @@
 import time
-import enc
+from encryption import fixedKey
 from decimal import *
 
 #start time
@@ -9,7 +9,7 @@ output=time.asctime(gm_time)
 print(output)
 
 #use for loop for average time estimate
-encrypted=(enc.enc(1,1))
+encrypted=(fixedKey.enc(1,1))
 #cleartext=(enc.dec(1,encrypted))
 
 #calculate elapsed time

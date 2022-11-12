@@ -1,5 +1,7 @@
+#encrypted with keys generated from random seeds
 from fixedKey import *
 from keylistGen import *
+
 string1=keygenE(1111111111111111)
 string2=keygenD(1111111111111111)
 

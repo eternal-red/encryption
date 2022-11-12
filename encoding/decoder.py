@@ -9,18 +9,18 @@ encodeTable={' ': '00', '!': '01', '"': '02', '#': '03', '$': '04', '%': '05', '
 'e': '63', 'f': '64', 'g': '65', 'h': '66', 'i': '67', 'j': '68', 'k': '69', 'l': '70', 
 'm': '71', 'n': '72', 'o': '73', 'p': '74', 'q': '75', 'r': '76', 's': '77', 't': '78', 
 'u': '79', 'v': '80', 'w': '81', 'x': '82', 'y': '83', 'z': '84', '0': '85', '1': '86', 
-'2': '87', '3': '88', '4': '89', '5': '90', '6': '91', '7': '92', '8': '93', '9': '94'}
+'2': '87', '3': '88', '4': '89', '5': '90', '6': '91', '7': '92', '8': '93', '9': '94',
+'?': "95", '?': "96", '?': "97", '?': "98", '?': "99",}
 encodeTable=list(encodeTable.keys())
-def decoder():
-    inputStr=input(f'enter encrypted_list: ')
-    inputList=inputStr[1:-1].split(', ')
+def decoder(encoded):
+    inputList=encoded[1:-1].split(', ')
     outputList=[]
     for segment in inputList:
         outputStr=''
-        subSegment=segment[3:-1]
+        subSegment=segment[1:-1]
         #print(subSegment)
         for i in range(1,int(len(subSegment)/2)+1):
-            encodedChar=subSegment[2*i-2:2*i]
+            encodedChar=subSegment[(2*i-2):2*i]
             #print(encodedChar)
             encodedChar=int(encodedChar)
             clearChar=encodeTable[encodedChar]
@@ -31,4 +31,4 @@ def decoder():
         returnStr+=i
     return returnStr
 
-print(decoder())
+#print(decoder('0.7779740000000000'))

@@ -1,9 +1,9 @@
 from decimal import *
-import enc
+from encryption.enc import *
 import arccos2
 getcontext().prec=200
 def test(x,y):
-    z=enc.enc(x,y)
+    z=enc(x,y)
     rev_y=arccos2.dec(x,z)
     print(f'decrypted value of y is: {rev_y}')
     error=Decimal(y)-rev_y

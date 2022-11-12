@@ -1,6 +1,5 @@
-#using a key generated with random.random
+#creating a key generated with random.random
 import random
-import fixedKey
 def keygenE(x):
     random.seed(x) #key seed can be as many digits but will not generate more than 16 digits for the key list
     key_list=[]
